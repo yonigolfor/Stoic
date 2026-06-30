@@ -1,0 +1,42 @@
+/* Notifications */
+"notification.morning.title" = "Good morning";
+"notification.morning.body" = "Your Stoic wisdom awaits. Set your intentions for the day.";
+"notification.evening.title" = "Evening reflection";
+"notification.evening.body" = "How did your commitments hold up today?";
+
+/* Onboarding */
+"onboarding.name.title" = "What's your name?";
+"onboarding.name.subtitle" = "Marcus will personalize your daily practice around you.";
+"onboarding.name.placeholder" = "Your name";
+
+"onboarding.profile.title" = "Your context";
+"onboarding.profile.subtitle" = "Help Marcus target wisdom that hits where it matters.";
+
+"onboarding.profession.label" = "Your profession";
+"onboarding.obstacle.label" = "Your core challenge";
+
+"onboarding.time.title" = "Set your rhythm";
+"onboarding.time.subtitle" = "Marcus will reach you at the right moments — no noise in between.";
+"onboarding.morning.label" = "Morning alignment";
+"onboarding.evening.label" = "Evening reflection";
+"onboarding.begin" = "Begin the practice";
+
+/* Common */
+"action.continue" = "Continue";
+
+/* Morning */
+"morning.title" = "Morning Alignment";
+"morning.goals.title" = "Today's commitments";
+"morning.goals.committed" = "Your commitments";
+"morning.goal.placeholder" = "One specific action you will take...";
+"morning.commit" = "Commit to these goals";
+"morning.evening_review" = "Evening reflection";
+
+/* Evening */
+"evening.title" = "Evening Reflection";
+"evening.subtitle" = "End of day";
+"evening.goals.title" = "Your commitments";
+"evening.reflection.title" = "What did you learn?";
+"evening.reflection.placeholder" = "A brief note on today...";
+"evening.save" = "Save reflection";
+"evening.saved" = "Reflection saved";

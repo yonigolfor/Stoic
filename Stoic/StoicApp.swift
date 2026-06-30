@@ -1,17 +1,12 @@
-//
-//  StoicApp.swift
-//  Stoic
-//
-//  Created by User on 30/06/2026.
-//
-
 import SwiftUI
+import SwiftData
 
 @main
 struct StoicApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentGateView()
         }
+        .modelContainer(for: [UserProfile.self, DailyCommitment.self])
     }
 }
