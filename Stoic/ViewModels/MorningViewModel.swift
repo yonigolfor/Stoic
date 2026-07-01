@@ -25,7 +25,7 @@ final class MorningViewModel {
         todayCommitment = all?.first { $0.dateKey == todayKey }
 
         if let existing = todayCommitment {
-            quote = StoicQuote(text: existing.quoteText, author: existing.quoteAuthor, tags: nil)
+            quote = StoicQuote(text: existing.quoteText, author: existing.quoteAuthor, category: nil, oneWordTitle: nil, emoji: nil)
             goals = existing.goals
         } else {
             loadQuote()
@@ -46,6 +46,6 @@ final class MorningViewModel {
 
     private func loadQuote() {
         let tag = userProfile.flatMap { CoreObstacle(rawValue: $0.coreObstacle) }?.quoteTag ?? "focus"
-        quote = QuoteService.randomQuote(matchingTag: tag)
+        quote = QuoteService.randomQuote(matchingCategory: tag)
     }
 }
