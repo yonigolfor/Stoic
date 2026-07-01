@@ -2,9 +2,13 @@
 
 ## The Task
 Enrich every quote in `Stoic/stoic_quotes/quotes.json` with structured metadata.
-The file contains **5,247 quotes**. We process them in batches of 10.
+The file originally contained 5,247 quotes. After deduplication: **4,930 unique quotes**.
 
-**Current progress: quotes 1–30 done. Next batch starts at index 30 (quote #31).**
+**Current progress: 18 quotes enriched. Next batch starts at index 18 (quote #19 in the deduplicated file).**
+
+> **Note on deduplication:** 317 exact duplicates were removed on 2026-07-01.
+> The 30 quotes we processed across batches 1–3 collapsed to 18 unique entries
+> (quotes 13–24 were duplicates of 1–12 and were merged). All metadata was preserved.
 
 ---
 
@@ -66,13 +70,14 @@ The file contains **5,247 quotes**. We process them in batches of 10.
 
 ## How to Run the Next Batch
 
-1. Read the next 10 quotes:
+1. Read the next 10 quotes (update the slice to match current index):
 ```python
 python3 -c "
 import json
 with open('Stoic/stoic_quotes/quotes.json') as f:
     data = json.load(f)
-for i, q in enumerate(data['quotes'][30:40], start=31):
+# Change 18:28 to the current start index
+for i, q in enumerate(data['quotes'][18:28], start=19):
     print(f'{i}. [{q[\"author\"]}]')
     print(f'   {q[\"text\"]}')
     print()
@@ -95,7 +100,7 @@ metadata = [
 with open('Stoic/stoic_quotes/quotes.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
-START_INDEX = 30  # 0-based index of first quote in this batch
+START_INDEX = 18  # 0-based index of first quote in this batch — update each time
 
 for i, meta in enumerate(metadata):
     q = data['quotes'][START_INDEX + i]
@@ -122,19 +127,19 @@ git push origin main
 
 ## Progress Log
 
-| Batch | Quotes | Status |
-|-------|--------|--------|
-| 1 | 1–10 | ✅ Done |
-| 2 | 11–20 | ✅ Done |
-| 3 | 21–30 | ✅ Done |
-| 4 | 31–40 | ⏳ Next |
-| … | … | … |
-| 525 | 5241–5247 | — |
+**Total unique quotes: 4,930 | Enriched: 18 | Remaining: 4,912**
+
+| Batch | Index (0-based) | Quote # | Status |
+|-------|-----------------|---------|--------|
+| 1 | 0–9   | 1–18 (post-dedup) | ✅ Done |
+| 2 | 18–27 | 19–28 | ⏳ Next |
+| … | … | … | — |
+| 493 | 4920–4929 | 4921–4930 | — |
 
 ---
 
 ## Notes on the Dataset
-- Quotes 1–24 are all Zeno of Citium — many are near-duplicates (the "two ears, one mouth" quote appears 4 times). Assign identical metadata to duplicates.
-- From quote 25 onward the authors diversify: Marcus Aurelius, Seneca, Epictetus, and occasional non-Stoic authors (Markus Zusak, Randy Pausch, Erin Hunter, etc.).
+- **317 duplicates removed** on 2026-07-01. File is now clean.
+- Early quotes (1–18 post-dedup) are all Zeno of Citium. From #19 onward authors diversify: Marcus Aurelius, Seneca, Epictetus, and occasional non-Stoic authors (Markus Zusak, Randy Pausch, Erin Hunter, etc.).
 - Non-Stoic authors still get categorized by the quote's meaning, not by tradition.
-- `work_stress` is rare in early Zeno quotes — expect it more in Marcus Aurelius and Seneca passages about professional life.
+- `work_stress` is rare in Zeno — expect it more in Marcus Aurelius and Seneca passages about professional life.
