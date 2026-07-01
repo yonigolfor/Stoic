@@ -6,7 +6,6 @@ import SwiftData
 final class MorningViewModel {
     var quote: StoicQuote?
     var goals: [String] = ["", ""]
-    var isLoading: Bool = false
     var todayCommitment: DailyCommitment?
     var userProfile: UserProfile?
 
@@ -14,10 +13,11 @@ final class MorningViewModel {
         goals.allSatisfy { !$0.trimmingCharacters(in: .whitespaces).isEmpty }
     }
 
-    func load(context: ModelContext) {
-        isLoading = true
-        defer { isLoading = false }
+    var isEveningTime: Bool {
+        Calendar.current.component(.hour, from: .now) >= 17
+    }
 
+    func load(context: ModelContext) {
         userProfile = (try? context.fetch(FetchDescriptor<UserProfile>()))?.first
 
         let todayKey = DateFormatter.stoicDay.string(from: .now)

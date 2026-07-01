@@ -9,10 +9,7 @@ struct MainSessionView: View {
         ZStack {
             Color.stoicBackground.ignoresSafeArea()
 
-            if viewModel.isLoading {
-                ProgressView()
-                    .tint(Color.stoicAccent)
-            } else if let commitment = viewModel.todayCommitment, commitment.isEveningComplete {
+            if let commitment = viewModel.todayCommitment, commitment.isEveningComplete {
                 EveningReflectionView(commitment: commitment)
             } else {
                 MorningDashboardView(viewModel: viewModel)

@@ -3,14 +3,12 @@ import SwiftData
 
 @Model
 final class UserProfile {
-    var id: UUID
     var name: String
     var profession: String
     var coreObstacle: String
     var createdAt: Date
 
     init(name: String, profession: String, coreObstacle: String) {
-        self.id = UUID()
         self.name = name
         self.profession = profession
         self.coreObstacle = coreObstacle

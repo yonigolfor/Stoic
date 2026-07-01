@@ -59,11 +59,7 @@ struct EveningReflectionView: View {
 
     private var goalsCompletion: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(String(localized: "evening.goals.title"))
-                .font(.system(size: 12, weight: .semibold))
-                .foregroundStyle(Color.stoicAccent)
-                .textCase(.uppercase)
-                .tracking(1.4)
+            SectionLabel(title: String(localized: "evening.goals.title"))
 
             ForEach(Array(commitment.goals.enumerated()), id: \.offset) { i, goal in
                 goalRow(goal: goal, index: i)
@@ -103,11 +99,7 @@ struct EveningReflectionView: View {
 
     private var reflectionInput: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(String(localized: "evening.reflection.title"))
-                .font(.system(size: 12, weight: .semibold))
-                .foregroundStyle(Color.stoicAccent)
-                .textCase(.uppercase)
-                .tracking(1.4)
+            SectionLabel(title: String(localized: "evening.reflection.title"))
 
             TextField(
                 String(localized: "evening.reflection.placeholder"),
@@ -146,8 +138,3 @@ struct EveningReflectionView: View {
     }
 }
 
-extension Array {
-    subscript(safe index: Int) -> Element? {
-        indices.contains(index) ? self[index] : nil
-    }
-}

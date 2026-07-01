@@ -22,7 +22,7 @@ struct MorningDashboardView: View {
                     .animation(.easeInOut(duration: 0.2), value: viewModel.canSubmit)
                 } else {
                     committedGoalsView
-                    if isEveningTime() {
+                    if viewModel.isEveningTime {
                         StoicButton(title: String(localized: "morning.evening_review"), style: .secondary) {
                             showEvening = true
                         }
@@ -84,7 +84,7 @@ struct MorningDashboardView: View {
 
     private var goalsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            sectionLabel(String(localized: "morning.goals.title"))
+            SectionLabel(title: String(localized: "morning.goals.title"))
 
             ForEach(0..<2, id: \.self) { i in
                 goalField(index: i)
@@ -115,7 +115,7 @@ struct MorningDashboardView: View {
 
     private var committedGoalsView: some View {
         VStack(alignment: .leading, spacing: 12) {
-            sectionLabel(String(localized: "morning.goals.committed"))
+            SectionLabel(title: String(localized: "morning.goals.committed"))
 
             ForEach(Array((viewModel.todayCommitment?.goals ?? []).enumerated()), id: \.offset) { _, goal in
                 HStack(alignment: .top, spacing: 12) {
@@ -138,15 +138,4 @@ struct MorningDashboardView: View {
         }
     }
 
-    private func sectionLabel(_ text: String) -> some View {
-        Text(text)
-            .font(.system(size: 12, weight: .semibold))
-            .foregroundStyle(Color.stoicAccent)
-            .textCase(.uppercase)
-            .tracking(1.4)
-    }
-
-    private func isEveningTime() -> Bool {
-        Calendar.current.component(.hour, from: .now) >= 17
-    }
 }

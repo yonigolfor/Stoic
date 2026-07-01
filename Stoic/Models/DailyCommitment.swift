@@ -3,7 +3,6 @@ import SwiftData
 
 @Model
 final class DailyCommitment {
-    var id: UUID
     var date: Date
     var quoteText: String
     var quoteAuthor: String
@@ -13,7 +12,6 @@ final class DailyCommitment {
     var isEveningComplete: Bool
 
     init(date: Date = .now, quoteText: String, quoteAuthor: String, goals: [String]) {
-        self.id = UUID()
         self.date = date
         self.quoteText = quoteText
         self.quoteAuthor = quoteAuthor
