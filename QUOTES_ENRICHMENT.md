@@ -4,7 +4,7 @@
 Enrich every quote in `Stoic/stoic_quotes/quotes.json` with structured metadata.
 The file originally contained 5,247 quotes. After deduplication: **4,930 unique quotes**.
 
-**Current progress: 18 quotes enriched. Next batch starts at index 18 (quote #19 in the deduplicated file).**
+**Current progress: 40 quotes enriched. Next batch starts at index 40 (quote #41 in the deduplicated file).**
 
 > **Note on deduplication:** 317 exact duplicates were removed on 2026-07-01.
 > The 30 quotes we processed across batches 1–3 collapsed to 18 unique entries
@@ -94,8 +94,8 @@ python3 -c "
 import json
 with open('Stoic/stoic_quotes/quotes.json') as f:
     data = json.load(f)
-# Change 18:28 to the current start index
-for i, q in enumerate(data['quotes'][18:28], start=19):
+# Change 40:50 to the current start index
+for i, q in enumerate(data['quotes'][40:50], start=41):
     print(f'{i}. [{q[\"author\"]}]')
     print(f'   {q[\"text\"]}')
     print()
@@ -125,7 +125,7 @@ metadata = [
 with open('Stoic/stoic_quotes/quotes.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
-START_INDEX = 18  # 0-based — update each batch
+START_INDEX = 40  # 0-based — update each batch
 
 for i, meta in enumerate(metadata):
     q = data['quotes'][START_INDEX + i]
@@ -145,7 +145,7 @@ EOF
 4. Commit:
 ```bash
 git add Stoic/stoic_quotes/quotes.json
-git commit -m "feat: add metadata to quotes 31-40"
+git commit -m "feat: add metadata to quotes 41-50"
 git push origin main
 ```
 
@@ -155,12 +155,15 @@ git push origin main
 
 ## Progress Log
 
-**Total unique quotes: 4,930 | Enriched: 18 | Remaining: 4,912**
+**Total unique quotes: 4,930 | Enriched: 40 | Remaining: 4,890**
 
 | Batch | Index (0-based) | Quote # | Status |
 |-------|-----------------|---------|--------|
 | 1 | 0–9   | 1–18 (post-dedup) | ✅ Done |
-| 2 | 18–27 | 19–28 | ⏳ Next |
+| 2 | 10–17 | 19–28 (post-dedup) | ✅ Done |
+| 3 | 18–29 | 19–30 | ✅ Done |
+| 4 | 30–39 | 31–40 | ✅ Done |
+| 5 | 40–49 | 41–50 | ⏳ Next |
 | … | … | … | — |
 | 493 | 4920–4929 | 4921–4930 | — |
 
