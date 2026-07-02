@@ -4,127 +4,181 @@
       "text": "We have two ears and one mouth, so we should listen more than we say.",
       "author": "Zeno of Citium, as quoted by Diogenes Laërtius",
       "category": "focus",
-      "one_word_title": "Muted",
-      "emoji": "🤐"
+      "emoji": "🤐",
+      "one_word_title_en": "Muted",
+      "one_word_title_he": "אנטנה",
+      "text_he": "יש לנו שתי אוזניים ופה אחד — זה לא מקרה. תקשיב יותר, תדבר פחות.",
+      "author_he": "זנון מקיטיון"
     },
     {
       "text": "Man conquers the world by conquering himself.",
       "author": "Zeno of Citium",
       "category": "discipline",
-      "one_word_title": "Villain",
-      "emoji": "🪞"
+      "emoji": "🪞",
+      "one_word_title_en": "Villain",
+      "one_word_title_he": "בוס",
+      "text_he": "אתה לא כובש את העולם מבחוץ. אתה כובש אותו מבפנים, על ידי כיבוש עצמך.",
+      "author_he": "זנון מקיטיון"
     },
     {
       "text": "The goal of life is living in agreement with Nature.",
       "author": "Zeno",
       "category": "emotional_control",
-      "one_word_title": "Synced",
-      "emoji": "🌊"
+      "emoji": "🌊",
+      "one_word_title_en": "Synced",
+      "one_word_title_he": "זורם",
+      "text_he": "המטרה בחיים פשוטה: ללכת עם הזרם של הטבע, לא נגדו.",
+      "author_he": "זנון"
     },
     {
       "text": "if being is many, it must be both like and unlike, and this is impossible, for neither can the like be unlike, nor the unlike like",
       "author": "Zeno",
       "category": "focus",
-      "one_word_title": "Glitched",
-      "emoji": "🔄"
+      "emoji": "🔄",
+      "one_word_title_en": "Glitched",
+      "one_word_title_he": "באג",
+      "text_he": "אם הדברים הם רבים, כל אחד חייב להיות גם דומה וגם שונה — אבל זה בלתי אפשרי. כך נולד הפרדוקס.",
+      "author_he": "זנון"
     },
     {
       "text": "Well-being is attained little by little, and nevertheless is no little thing itself.",
       "author": "Zeno of Citium",
       "category": "discipline",
-      "one_word_title": "Drip",
-      "emoji": "🧱"
+      "emoji": "🧱",
+      "one_word_title_en": "Drip",
+      "one_word_title_he": "טפטוף",
+      "text_he": "רווחה לא מגיעה בפעם אחת. היא מצטברת לאט לאט — טיפה אחר טיפה. ועדיין, בסוף, היא עצומה.",
+      "author_he": "זנון מקיטיון"
     },
     {
       "text": "The reason why we have two ears and only one mouth is that we may listen the more and talk the less.",
       "author": "Zeno",
       "category": "focus",
-      "one_word_title": "Ratio",
-      "emoji": "📻"
+      "emoji": "📻",
+      "one_word_title_en": "Ratio",
+      "one_word_title_he": "יחס",
+      "text_he": "שתי אוזניים, פה אחד — זאת לא מקריות. זאת הוראת הפעלה.",
+      "author_he": "זנון"
     },
     {
       "text": "When a dog is tied to a cart, if it wants to follow, it is pulled and follows, making its spontaneous act coincide with necessity. But if the dog does not follow, it will be compelled in any case. So it is with men too: even if they don't want to, they will be compelled to follow what is destined.",
       "author": "Zeno of Citium",
       "category": "emotional_control",
-      "one_word_title": "Leashed",
-      "emoji": "🐕"
+      "emoji": "🐕",
+      "one_word_title_en": "Leashed",
+      "one_word_title_he": "מקבל",
+      "text_he": "כלב קשור לעגלה ילך איתה בכל מקרה — בין שירצה ובין שלא. כך גם אנחנו עם הגורל. עדיף ללכת ברצון.",
+      "author_he": "זנון מקיטיון"
     },
     {
       "text": "We have two ears and one mouth, therefore we should listen twice as much as we speak.",
       "author": "Zeno",
       "category": "focus",
-      "one_word_title": "Download",
-      "emoji": "📥"
+      "emoji": "📥",
+      "one_word_title_en": "Download",
+      "one_word_title_he": "סופג",
+      "text_he": "שתי אוזניים, פה אחד — לכן תקשיב פי שניים ממה שאתה מדבר.",
+      "author_he": "זנון"
     },
     {
       "text": "All the good are friends of one another.",
       "author": "Zeno of Citium",
       "category": "emotional_control",
-      "one_word_title": "Vetted",
-      "emoji": "🧲"
+      "emoji": "🧲",
+      "one_word_title_en": "Vetted",
+      "one_word_title_he": "מסונן",
+      "text_he": "בין אנשים טובים תמיד תמצא חברות. טוב מושך טוב.",
+      "author_he": "זנון מקיטיון"
     },
     {
       "text": "A friend is our alter ego.",
       "author": "Zeno of Citium",
       "category": "emotional_control",
-      "one_word_title": "Twinning",
-      "emoji": "🪞"
+      "emoji": "🪞",
+      "one_word_title_en": "Twinning",
+      "one_word_title_he": "תאום",
+      "text_he": "חבר הוא פשוט גרסה אחרת של עצמך.",
+      "author_he": "זנון מקיטיון"
     },
     {
       "text": "Nothing is more hostile to a firm grasp on knowledge than self-deception.",
       "author": "Zeno of Citium",
       "category": "focus",
-      "one_word_title": "Cope",
-      "emoji": "🙈"
+      "emoji": "🙈",
+      "one_word_title_en": "Cope",
+      "one_word_title_he": "פייק",
+      "text_he": "שום דבר לא מסוכן יותר לידע מאשר לשקר לעצמך.",
+      "author_he": "זנון מקיטיון"
     },
     {
       "text": "He would stretch his arm out in from of his and show his open palm…and he would point to his hand and say “this is perception”. then he would SLIGHTLY close his fingers…just a little bit…so now he looks like Zeno with arthritis…and he points to his hand NOW and says “This is assent” you know.. agreement or belief in something. then he closes his fist tight and points to it and says “This is Comprehension”. Then he takes his other hand and grabs his fist…holding it closed and says “This is Knowledge.",
       "author": "Zeno of Citium",
       "category": "focus",
-      "one_word_title": "Loading",
-      "emoji": "🖐️"
+      "emoji": "🖐️",
+      "one_word_title_en": "Loading",
+      "one_word_title_he": "טוען",
+      "text_he": "כף יד פתוחה — תפיסה. אצבעות קצת סגורות — הסכמה. אגרוף סגור — הבנה. שתי ידיים אוחזות באגרוף — ידע.",
+      "author_he": "זנון מקיטיון"
     },
     {
       "text": "Imagine smiling after a slap in the face. Then think of doing it twenty-four hours a day.",
       "author": "Markus Zusak",
       "category": "emotional_control",
-      "one_word_title": "Glazed",
-      "emoji": "🍩"
+      "emoji": "🍩",
+      "one_word_title_en": "Glazed",
+      "one_word_title_he": "אטום",
+      "text_he": "דמיין שאתה מחייך אחרי סטירה. עכשיו תחשוב שאתה עושה את זה עשרים וארבע שעות ביממה.",
+      "author_he": "מרקוס זוסק"
     },
     {
       "text": "If you are distressed by anything external, the pain is not due to the thing itself, but to your estimate of it; and this you have the power to revoke at any moment.",
       "author": "Marcus Aurelius",
       "category": "emotional_control",
-      "one_word_title": "Narrator",
-      "emoji": "📖"
+      "emoji": "📖",
+      "one_word_title_en": "Narrator",
+      "one_word_title_he": "מספר",
+      "text_he": "אם משהו חיצוני מציק לך, הכאב לא מגיע מהדבר עצמו — הוא מגיע מהפרשנות שלך. ואת הפרשנות אתה יכול לשנות בכל רגע.",
+      "author_he": "מרקוס אורליוס"
     },
     {
       "text": "Never let the future disturb you. You will meet it, if you have to, with the same weapons of reason which today arm you against the present.",
       "author": "Marcus Aurelius",
       "category": "emotional_control",
-      "one_word_title": "Later",
-      "emoji": "📅"
+      "emoji": "📅",
+      "one_word_title_en": "Later",
+      "one_word_title_he": "נינוח",
+      "text_he": "אל תיתן לעתיד להטריד אותך. כשהוא יגיע, תפגוש אותו עם אותו שכל שמשרת אותך היום.",
+      "author_he": "מרקוס אורליוס"
     },
     {
       "text": "Warriors should suffer their pain silently.",
       "author": "Erin Hunter",
       "category": "discipline",
-      "one_word_title": "Muzzled",
-      "emoji": "🤫"
+      "emoji": "🤫",
+      "one_word_title_en": "Muzzled",
+      "one_word_title_he": "בלוע",
+      "text_he": "לוחמים סופגים את הכאב שלהם בשקט.",
+      "author_he": "ארין האנטר"
     },
     {
       "text": "It is the power of the mind to be unconquerable.",
       "author": "Seneca",
       "category": "discipline",
-      "one_word_title": "Encrypted",
-      "emoji": "🔐"
+      "emoji": "🔐",
+      "one_word_title_en": "Encrypted",
+      "one_word_title_he": "מוצפן",
+      "text_he": "הכוח של המוח הוא שאי אפשר לנצח אותו.",
+      "author_he": "סנקה"
     },
     {
       "text": "Complaining does not work as a strategy. We all have finite time and energy. Any time we spend whining is unlikely to help us achieve our goals. And it won't make us happier.",
       "author": "Randy Pausch",
       "category": "discipline",
-      "one_word_title": "Drained",
-      "emoji": "🪫"
+      "emoji": "🪫",
+      "one_word_title_en": "Drained",
+      "one_word_title_he": "בזבוז",
+      "text_he": "תלונות הן לא אסטרטגיה. יש לנו זמן ואנרגיה מוגבלים — כל דקה שמבלים בלבכות היא דקה שלא מתקדמים.",
+      "author_he": "ראנדי פאוש"
     },
     {
       "text": "Until we have begun to go without them, we fail to realize how unnecessary many things are. We've been using them not because we needed them but because we had them.",

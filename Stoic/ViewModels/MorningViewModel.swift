@@ -25,7 +25,7 @@ final class MorningViewModel {
         todayCommitment = all?.first { $0.dateKey == todayKey }
 
         if let existing = todayCommitment {
-            quote = StoicQuote(text: existing.quoteText, author: existing.quoteAuthor, category: nil, oneWordTitle: nil, emoji: nil)
+            quote = StoicQuote(text: existing.quoteText, author: existing.quoteAuthor, category: nil, oneWordTitleEn: nil, oneWordTitleHe: nil, textHe: nil, authorHe: nil, emoji: nil)
             goals = existing.goals
         } else {
             loadQuote()

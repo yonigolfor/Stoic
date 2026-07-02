@@ -16,10 +16,13 @@ The file originally contained 5,247 quotes. After deduplication: **4,930 unique 
 
 ```json
 {
-  "text": "original — keep exactly",
+  "text": "original English — keep exactly",
   "author": "original — keep exactly",
   "category": "one of four enum values",
-  "one_word_title": "single sharp word",
+  "one_word_title_en": "single sharp English word",
+  "one_word_title_he": "מילה אחת בעברית מודרנית",
+  "text_he": "תרגום עברי טבעי ושוטף",
+  "author_he": "שם המחבר בעברית",
   "emoji": "single emoji"
 }
 ```
@@ -45,13 +48,28 @@ The file originally contained 5,247 quotes. After deduplication: **4,930 unique 
 - Ask: *what would a sharp therapist or Gen-Z philosopher call this concept?*
 
 **Good examples from completed batches:**
-- "Cope" (self-deception)
-- "Glazed" (smiling through pain — like a donut, nothing sticks)
-- "Narrator" (pain = your interpretation, not the event)
-- "Encrypted" (unconquerable mind)
-- "Drained" (complaining wastes finite energy)
-- "Leashed" (accepting fate like the dog tied to the cart)
-- "Loading" (perception → assent → comprehension → knowledge)
+
+| EN | HE | Quote |
+|----|-----|-------|
+| Cope | פייק | self-deception |
+| Glazed | אטום | smiling through pain |
+| Narrator | מספר | pain = your interpretation |
+| Encrypted | מוצפן | unconquerable mind |
+| Drained | בזבוז | complaining wastes energy |
+| Leashed | מקבל | accepting fate |
+| Loading | טוען | perception → knowledge |
+
+### Hebrew Title Rules (`one_word_title_he`)
+- One word only, modern spoken Israeli Hebrew
+- Avoid textbook/formal Hebrew (לא: משמעת, חוכמה, עוצמה)
+- Use everyday words with attitude: זורם, פייק, בוס, אטום, תאום, טוען
+- Should hit the same ironic/punchy vibe as the English title
+
+### Hebrew Translation Rules (`text_he`)
+- Natural, flowing, conversational — like a smart friend over coffee
+- **Forbidden words:** אנוכי, חפץ, על נקלה, בל יעבור, הלז, כי תחפוץ
+- Keep it punchy and rhythmic — every word should earn its place
+- OK to paraphrase slightly if it makes the Hebrew more natural
 
 ### Emoji Rules
 - No 🧠 for mind, no ⚔️ for discipline, no 📿 for stoicism
@@ -86,28 +104,38 @@ for i, q in enumerate(data['quotes'][18:28], start=19):
 
 2. Analyze each quote — one sentence of philosophical reasoning per quote.
 
-3. Run the update script (change the slice and metadata list):
+3. Run the update script (change `START_INDEX` and `metadata` list each batch):
 ```python
 python3 << 'EOF'
 import json
 
 metadata = [
-    # 31
-    {"category": "...", "one_word_title": "...", "emoji": "..."},
-    # 32 ...
+    # 19
+    {
+        "category": "...",
+        "one_word_title_en": "...",
+        "one_word_title_he": "...",
+        "text_he": "...",
+        "author_he": "...",
+        "emoji": "..."
+    },
+    # 20 ...
 ]
 
 with open('Stoic/stoic_quotes/quotes.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
-START_INDEX = 18  # 0-based index of first quote in this batch — update each time
+START_INDEX = 18  # 0-based — update each batch
 
 for i, meta in enumerate(metadata):
     q = data['quotes'][START_INDEX + i]
     q.pop('tags', None)
-    q['category']       = meta['category']
-    q['one_word_title'] = meta['one_word_title']
-    q['emoji']          = meta['emoji']
+    q['category']        = meta['category']
+    q['one_word_title_en'] = meta['one_word_title_en']
+    q['one_word_title_he'] = meta['one_word_title_he']
+    q['text_he']           = meta['text_he']
+    q['author_he']         = meta['author_he']
+    q['emoji']             = meta['emoji']
 
 with open('Stoic/stoic_quotes/quotes.json', 'w', encoding='utf-8') as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
