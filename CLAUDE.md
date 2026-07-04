@@ -168,6 +168,15 @@ The app is fully bilingual — **Hebrew (he) and English (en)** are both first-c
 - Hebrew author names follow standard Israeli transliteration conventions (e.g. Marcus Aurelius → מרקוס אורליוס, Seneca → סנקה, Epictetus → אפיקטטוס).
 - UI layout must support RTL (`layoutDirection(.rightToLeft)`) for Hebrew users — do not hard-code leading/trailing assumptions.
 
+**`text_he` Translation Standard — Marcus Voice:**
+Marcus is a raw, premium Active Stoicism platform for high-performers — not an academic app. Every `text_he` must sound like a sharp, real human being speaking modern Israeli Hebrew, not a translated text.
+
+- **Escape the Translation Trap:** Never translate word-for-word. Rearrange structure so it makes native sense to an Israeli ear.
+- **Forbidden register:** No archaic, biblical, or high-literary phrasing. Avoid: אנוכי, חפץ, על נקלה, הלז, בל יעבור and similar.
+- **Rhythm over fidelity:** Rearrange sentences for punch. A shorter, harder-hitting sentence beats a faithful but flat one.
+- **Strict Rule — Complete Sentences:** Every `text_he` must be a grammatically complete sentence. Do not cut sentences mid-way or leave pronouns without a clear referent (e.g. "הוא נכבש" with no prior subject defined). Sharp is good. Incomplete is a bug.
+- **One-word titles (`one_word_title_he`):** Must be a single punchy, modern colloquial word — not a textbook term.
+
 ### Localization Matrix:
 - Never use raw string constants inside views. Implement `String(localized: "key")`. All user text allocations map directly to `Localizable.xcstrings`.
 
