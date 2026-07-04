@@ -48,6 +48,6 @@ final class MorningViewModel {
 
     private func loadQuote() {
         let tag = userProfile.flatMap { CoreObstacle(rawValue: $0.coreObstacle) }?.quoteTag ?? "focus"
-        quote = QuoteService.randomQuote(matchingCategory: tag)
+        quote = QuoteService.nextQuote(matchingCategory: tag)
     }
 }

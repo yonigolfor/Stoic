@@ -10,8 +10,28 @@ enum QuoteService {
         return collection.quotes
     }()
 
-    static func randomQuote(matchingCategory category: String) -> StoicQuote? {
-        let filtered = quotes.filter { $0.category == category }
-        return filtered.isEmpty ? quotes.randomElement() : filtered.randomElement()
+    static func nextQuote(matchingCategory category: String) -> StoicQuote? {
+        let pool = quotes.filter { $0.category == category }
+        let fallback = quotes
+        let activePool = pool.isEmpty ? fallback : pool
+        let activeIds = Set(activePool.map(\.stableId))
+
+        var queue = PersistenceService.shared.quoteQueue(for: category)
+
+        // Filter dead IDs, then append any IDs not yet in the queue
+        queue = queue.filter { activeIds.contains($0) }
+        let queued = Set(queue)
+        let newIds = activePool.map(\.stableId).filter { !queued.contains($0) }
+        queue.append(contentsOf: newIds)
+
+        // Rebuild with a fresh shuffle when exhausted
+        if queue.isEmpty {
+            queue = activePool.map(\.stableId).shuffled()
+        }
+
+        let nextId = queue.removeFirst()
+        PersistenceService.shared.setQuoteQueue(queue, for: category)
+
+        return activePool.first { $0.stableId == nextId } ?? activePool.first
     }
 }

@@ -37,6 +37,7 @@ struct MainSessionView: View {
         try? modelContext.delete(model: UserProfile.self)
         try? modelContext.delete(model: DailyCommitment.self)
         PersistenceService.shared.hasCompletedOnboarding = false
+        PersistenceService.shared.clearAllQuoteQueues()
         LanguageService.redetect()
         HapticService.shared.success()
         onReset()

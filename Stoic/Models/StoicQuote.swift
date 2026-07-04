@@ -10,7 +10,8 @@ struct StoicQuote: Codable, Identifiable {
     let authorHe: String?
     let emoji: String?
 
-    var id: String { text }
+    var id: String { text.stableHash }
+    var stableId: String { text.stableHash }
 
     var localizedText: String { LanguageService.isHebrew ? (textHe ?? text) : text }
     var localizedAuthor: String { LanguageService.isHebrew ? (authorHe ?? author) : author }
