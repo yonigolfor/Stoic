@@ -56,5 +56,19 @@ final class PersistenceService {
         defaults.dictionaryRepresentation().keys
             .filter { $0.hasPrefix(prefix) }
             .forEach { defaults.removeObject(forKey: $0) }
+        lastPickedQuoteId = nil
+        lastPickedDateKey = nil
+    }
+
+    // MARK: - Daily Quote Cache
+
+    var lastPickedQuoteId: String? {
+        get { defaults.string(forKey: "lastPickedQuoteId") }
+        set { defaults.set(newValue, forKey: "lastPickedQuoteId") }
+    }
+
+    var lastPickedDateKey: String? {
+        get { defaults.string(forKey: "lastPickedDateKey") }
+        set { defaults.set(newValue, forKey: "lastPickedDateKey") }
     }
 }

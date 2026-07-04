@@ -10,6 +10,29 @@ enum QuoteService {
         return collection.quotes
     }()
 
+    static func quoteForToday(matchingCategory category: String) -> StoicQuote? {
+        let todayKey = DateFormatter.stoicDay.string(from: .now)
+        let persistence = PersistenceService.shared
+
+        if persistence.lastPickedDateKey == todayKey,
+           let savedId = persistence.lastPickedQuoteId {
+            let pool = resolvedPool(for: category)
+            if let cached = pool.first(where: { $0.stableId == savedId }) {
+                return cached
+            }
+        }
+
+        let next = nextQuote(matchingCategory: category)
+        persistence.lastPickedQuoteId = next?.stableId
+        persistence.lastPickedDateKey = todayKey
+        return next
+    }
+
+    private static func resolvedPool(for category: String) -> [StoicQuote] {
+        let filtered = quotes.filter { $0.category == category }
+        return filtered.isEmpty ? quotes : filtered
+    }
+
     static func nextQuote(matchingCategory category: String) -> StoicQuote? {
         let pool = quotes.filter { $0.category == category }
         let fallback = quotes
