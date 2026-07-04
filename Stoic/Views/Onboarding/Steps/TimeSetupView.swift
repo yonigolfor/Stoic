@@ -9,11 +9,11 @@ struct TimeSetupView: View {
             Spacer()
 
             VStack(alignment: .leading, spacing: 10) {
-                Text(String(localized: "onboarding.time.title"))
+                Text(String(localized: "onboarding.time.title", bundle: LanguageService.currentBundle))
                     .font(.system(size: 28, weight: .bold, design: .rounded))
                     .foregroundStyle(Color.stoicTextPrimary)
 
-                Text(String(localized: "onboarding.time.subtitle"))
+                Text(String(localized: "onboarding.time.subtitle", bundle: LanguageService.currentBundle))
                     .font(.system(size: 17, weight: .regular))
                     .foregroundStyle(Color.stoicTextSecondary)
                     .lineSpacing(3)
@@ -23,13 +23,13 @@ struct TimeSetupView: View {
             VStack(spacing: 12) {
                 timeCard(
                     icon: "sunrise.fill",
-                    label: String(localized: "onboarding.morning.label"),
+                    label: String(localized: "onboarding.morning.label", bundle: LanguageService.currentBundle),
                     selection: $viewModel.morningTime
                 )
 
                 timeCard(
                     icon: "moon.fill",
-                    label: String(localized: "onboarding.evening.label"),
+                    label: String(localized: "onboarding.evening.label", bundle: LanguageService.currentBundle),
                     selection: $viewModel.eveningTime
                 )
             }
@@ -37,7 +37,7 @@ struct TimeSetupView: View {
             Spacer()
             Spacer()
 
-            StoicButton(title: String(localized: "onboarding.begin")) {
+            StoicButton(title: String(localized: "onboarding.begin", bundle: LanguageService.currentBundle)) {
                 onComplete()
             }
             .padding(.bottom, 32)

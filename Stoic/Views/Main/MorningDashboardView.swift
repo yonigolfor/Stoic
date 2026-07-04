@@ -14,7 +14,7 @@ struct MorningDashboardView: View {
 
                 if viewModel.todayCommitment == nil {
                     goalsSection
-                    StoicButton(title: String(localized: "morning.commit")) {
+                    StoicButton(title: String(localized: "morning.commit", bundle: LanguageService.currentBundle)) {
                         viewModel.submitCommitment(context: modelContext)
                     }
                     .disabled(!viewModel.canSubmit)
@@ -23,7 +23,7 @@ struct MorningDashboardView: View {
                 } else {
                     committedGoalsView
                     if viewModel.isEveningTime {
-                        StoicButton(title: String(localized: "morning.evening_review"), style: .secondary) {
+                        StoicButton(title: String(localized: "morning.evening_review", bundle: LanguageService.currentBundle), style: .secondary) {
                             showEvening = true
                         }
                     }
@@ -49,7 +49,7 @@ struct MorningDashboardView: View {
                 .textCase(.uppercase)
                 .tracking(1.4)
 
-            Text(String(localized: "morning.title"))
+            Text(String(localized: "morning.title", bundle: LanguageService.currentBundle))
                 .font(.system(size: 28, weight: .bold, design: .rounded))
                 .foregroundStyle(Color.stoicTextPrimary)
         }
@@ -89,7 +89,7 @@ struct MorningDashboardView: View {
 
     private var goalsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            SectionLabel(title: String(localized: "morning.goals.title"))
+            SectionLabel(title: String(localized: "morning.goals.title", bundle: LanguageService.currentBundle))
 
             ForEach(0..<2, id: \.self) { i in
                 goalField(index: i)
@@ -105,7 +105,7 @@ struct MorningDashboardView: View {
                 .frame(width: 20)
                 .padding(.top, 15)
 
-            TextField(String(localized: "morning.goal.placeholder"), text: $viewModel.goals[index], axis: .vertical)
+            TextField(String(localized: "morning.goal.placeholder", bundle: LanguageService.currentBundle), text: $viewModel.goals[index], axis: .vertical)
                 .font(.system(size: 17, weight: .regular))
                 .foregroundStyle(Color.stoicTextPrimary)
                 .tint(Color.stoicAccent)
@@ -120,7 +120,7 @@ struct MorningDashboardView: View {
 
     private var committedGoalsView: some View {
         VStack(alignment: .leading, spacing: 12) {
-            SectionLabel(title: String(localized: "morning.goals.committed"))
+            SectionLabel(title: String(localized: "morning.goals.committed", bundle: LanguageService.currentBundle))
 
             ForEach(Array((viewModel.todayCommitment?.goals ?? []).enumerated()), id: \.offset) { _, goal in
                 HStack(alignment: .top, spacing: 12) {

@@ -9,18 +9,18 @@ struct NameSetupView: View {
             Spacer()
 
             VStack(alignment: .leading, spacing: 10) {
-                Text(String(localized: "onboarding.name.title"))
+                Text(String(localized: "onboarding.name.title", bundle: LanguageService.currentBundle))
                     .font(.system(size: 28, weight: .bold, design: .rounded))
                     .foregroundStyle(Color.stoicTextPrimary)
 
-                Text(String(localized: "onboarding.name.subtitle"))
+                Text(String(localized: "onboarding.name.subtitle", bundle: LanguageService.currentBundle))
                     .font(.system(size: 17, weight: .regular))
                     .foregroundStyle(Color.stoicTextSecondary)
                     .lineSpacing(3)
             }
             .padding(.bottom, 36)
 
-            TextField(String(localized: "onboarding.name.placeholder"), text: $viewModel.name)
+            TextField(String(localized: "onboarding.name.placeholder", bundle: LanguageService.currentBundle), text: $viewModel.name)
                 .font(.system(size: 22, weight: .medium, design: .rounded))
                 .foregroundStyle(Color.stoicTextPrimary)
                 .tint(Color.stoicAccent)
@@ -38,7 +38,7 @@ struct NameSetupView: View {
             Spacer()
             Spacer()
 
-            StoicButton(title: String(localized: "action.continue")) {
+            StoicButton(title: String(localized: "action.continue", bundle: LanguageService.currentBundle)) {
                 viewModel.advance()
             }
             .disabled(!viewModel.isNameValid)

@@ -17,8 +17,8 @@ final class NotificationManager {
     func scheduleMorningNotification(timeString: String) {
         schedule(
             identifier: "marcus.morning",
-            title: String(localized: "notification.morning.title"),
-            body: String(localized: "notification.morning.body"),
+            title: String(localized: "notification.morning.title", bundle: LanguageService.currentBundle),
+            body: String(localized: "notification.morning.body", bundle: LanguageService.currentBundle),
             timeString: timeString
         )
     }
@@ -26,8 +26,8 @@ final class NotificationManager {
     func scheduleEveningNotification(timeString: String) {
         schedule(
             identifier: "marcus.evening",
-            title: String(localized: "notification.evening.title"),
-            body: String(localized: "notification.evening.body"),
+            title: String(localized: "notification.evening.title", bundle: LanguageService.currentBundle),
+            body: String(localized: "notification.evening.body", bundle: LanguageService.currentBundle),
             timeString: timeString
         )
     }

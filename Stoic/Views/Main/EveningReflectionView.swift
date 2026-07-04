@@ -17,7 +17,7 @@ struct EveningReflectionView: View {
                 if viewModel.isSaved {
                     savedBadge
                 } else {
-                    StoicButton(title: String(localized: "evening.save")) {
+                    StoicButton(title: String(localized: "evening.save", bundle: LanguageService.currentBundle)) {
                         viewModel.saveReflection(context: modelContext)
                     }
                 }
@@ -30,13 +30,13 @@ struct EveningReflectionView: View {
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(String(localized: "evening.subtitle"))
+            Text(String(localized: "evening.subtitle", bundle: LanguageService.currentBundle))
                 .font(.system(size: 12, weight: .semibold))
                 .foregroundStyle(Color.stoicAccent)
                 .textCase(.uppercase)
                 .tracking(1.4)
 
-            Text(String(localized: "evening.title"))
+            Text(String(localized: "evening.title", bundle: LanguageService.currentBundle))
                 .font(.system(size: 28, weight: .bold, design: .rounded))
                 .foregroundStyle(Color.stoicTextPrimary)
         }
@@ -59,7 +59,7 @@ struct EveningReflectionView: View {
 
     private var goalsCompletion: some View {
         VStack(alignment: .leading, spacing: 12) {
-            SectionLabel(title: String(localized: "evening.goals.title"))
+            SectionLabel(title: String(localized: "evening.goals.title", bundle: LanguageService.currentBundle))
 
             ForEach(Array(commitment.goals.enumerated()), id: \.offset) { i, goal in
                 goalRow(goal: goal, index: i)
@@ -99,10 +99,10 @@ struct EveningReflectionView: View {
 
     private var reflectionInput: some View {
         VStack(alignment: .leading, spacing: 12) {
-            SectionLabel(title: String(localized: "evening.reflection.title"))
+            SectionLabel(title: String(localized: "evening.reflection.title", bundle: LanguageService.currentBundle))
 
             TextField(
-                String(localized: "evening.reflection.placeholder"),
+                String(localized: "evening.reflection.placeholder", bundle: LanguageService.currentBundle),
                 text: $viewModel.reflectionNote,
                 axis: .vertical
             )
@@ -125,7 +125,7 @@ struct EveningReflectionView: View {
                 .font(.system(size: 20))
                 .foregroundStyle(Color.stoicAccent)
 
-            Text(String(localized: "evening.saved"))
+            Text(String(localized: "evening.saved", bundle: LanguageService.currentBundle))
                 .font(.system(size: 17, weight: .semibold))
                 .foregroundStyle(Color.stoicTextPrimary)
         }

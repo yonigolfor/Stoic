@@ -8,11 +8,11 @@ struct ProfileSetupView: View {
             Spacer()
 
             VStack(alignment: .leading, spacing: 10) {
-                Text(String(localized: "onboarding.profile.title"))
+                Text(String(localized: "onboarding.profile.title", bundle: LanguageService.currentBundle))
                     .font(.system(size: 28, weight: .bold, design: .rounded))
                     .foregroundStyle(Color.stoicTextPrimary)
 
-                Text(String(localized: "onboarding.profile.subtitle"))
+                Text(String(localized: "onboarding.profile.subtitle", bundle: LanguageService.currentBundle))
                     .font(.system(size: 17, weight: .regular))
                     .foregroundStyle(Color.stoicTextSecondary)
                     .lineSpacing(3)
@@ -20,10 +20,10 @@ struct ProfileSetupView: View {
             .padding(.bottom, 32)
 
             VStack(alignment: .leading, spacing: 20) {
-                SectionLabel(title: String(localized: "onboarding.profession.label"))
+                SectionLabel(title: String(localized: "onboarding.profession.label", bundle: LanguageService.currentBundle))
                 professionGrid
 
-                SectionLabel(title: String(localized: "onboarding.obstacle.label"))
+                SectionLabel(title: String(localized: "onboarding.obstacle.label", bundle: LanguageService.currentBundle))
                     .padding(.top, 4)
                 obstacleGrid
             }
@@ -31,7 +31,7 @@ struct ProfileSetupView: View {
             Spacer()
             Spacer()
 
-            StoicButton(title: String(localized: "action.continue")) {
+            StoicButton(title: String(localized: "action.continue", bundle: LanguageService.currentBundle)) {
                 viewModel.advance()
             }
             .padding(.bottom, 32)
