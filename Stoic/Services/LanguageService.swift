@@ -37,6 +37,5 @@ final class LanguageService {
     private static func apply(_ code: String) {
         PersistenceService.shared.preferredLanguage = code
         UserDefaults.standard.set([code], forKey: "AppleLanguages")
-        UserDefaults.standard.synchronize()
     }
 }
