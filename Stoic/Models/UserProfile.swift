@@ -27,6 +27,20 @@ enum Profession: String, CaseIterable, Identifiable {
     case other              = "Other"
 
     var id: String { rawValue }
+
+    var localizedLabel: String {
+        guard LanguageService.isHebrew else { return rawValue }
+        switch self {
+        case .entrepreneur:     return "יזם"
+        case .softwareEngineer: return "מהנדס תוכנה"
+        case .creativeProf:     return "פרופסיונל יצירתי"
+        case .executive:        return "מנהל / אקזקיוטיב"
+        case .student:          return "סטודנט"
+        case .healthcare:       return "איש בריאות"
+        case .educator:         return "מחנך"
+        case .other:            return "אחר"
+        }
+    }
 }
 
 enum CoreObstacle: String, CaseIterable, Identifiable {
@@ -43,6 +57,16 @@ enum CoreObstacle: String, CaseIterable, Identifiable {
         case .workStress:       return "work_stress"
         case .selfDiscipline:   return "discipline"
         case .emotionalControl: return "emotional_control"
+        }
+    }
+
+    var localizedLabel: String {
+        guard LanguageService.isHebrew else { return rawValue }
+        switch self {
+        case .focus:            return "פוקוס"
+        case .workStress:       return "לחץ בעבודה"
+        case .selfDiscipline:   return "משמעת עצמית"
+        case .emotionalControl: return "שליטה רגשית"
         }
     }
 }

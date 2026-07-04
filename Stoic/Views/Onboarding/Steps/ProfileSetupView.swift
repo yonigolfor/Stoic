@@ -42,7 +42,7 @@ struct ProfileSetupView: View {
     private var professionGrid: some View {
         FlowLayout(spacing: 8) {
             ForEach(Profession.allCases) { profession in
-                chipView(profession.rawValue, isSelected: viewModel.profession == profession) {
+                chipView(profession.localizedLabel, isSelected: viewModel.profession == profession) {
                     viewModel.profession = profession
                     HapticService.shared.selection()
                 }
@@ -53,7 +53,7 @@ struct ProfileSetupView: View {
     private var obstacleGrid: some View {
         FlowLayout(spacing: 8) {
             ForEach(CoreObstacle.allCases) { obstacle in
-                chipView(obstacle.rawValue, isSelected: viewModel.coreObstacle == obstacle) {
+                chipView(obstacle.localizedLabel, isSelected: viewModel.coreObstacle == obstacle) {
                     viewModel.coreObstacle = obstacle
                     HapticService.shared.selection()
                 }

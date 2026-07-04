@@ -45,12 +45,12 @@ struct EveningReflectionView: View {
     private var quoteRecap: some View {
         PremiumCardView {
             VStack(alignment: .leading, spacing: 10) {
-                Text(commitment.quoteText)
+                Text(commitment.localizedQuoteText)
                     .font(.system(size: 18, weight: .medium, design: .serif))
                     .foregroundStyle(Color.stoicTextPrimary)
                     .lineSpacing(5)
 
-                Text("— \(commitment.quoteAuthor)")
+                Text("— \(commitment.localizedQuoteAuthor)")
                     .font(.system(size: 13, weight: .regular))
                     .foregroundStyle(Color.stoicTextSecondary)
             }

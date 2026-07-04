@@ -11,6 +11,7 @@ final class PersistenceService {
         case morningNotificationTime
         case eveningNotificationTime
         case currentStreak
+        case preferredLanguage
     }
 
     var hasCompletedOnboarding: Bool {
@@ -31,5 +32,10 @@ final class PersistenceService {
     var currentStreak: Int {
         get { defaults.integer(forKey: Key.currentStreak.rawValue) }
         set { defaults.set(newValue, forKey: Key.currentStreak.rawValue) }
+    }
+
+    var preferredLanguage: String? {
+        get { defaults.string(forKey: Key.preferredLanguage.rawValue) }
+        set { defaults.set(newValue, forKey: Key.preferredLanguage.rawValue) }
     }
 }

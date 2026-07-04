@@ -1,0 +1,42 @@
+/* Notifications */
+"notification.morning.title" = "בוקר טוב";
+"notification.morning.body" = "חוכמת הסטואים מחכה לך. קבע את כוונותיך ליום הקרוב.";
+"notification.evening.title" = "רפלקציה ערבית";
+"notification.evening.body" = "איך עמדת בהתחייבויות שלך היום?";
+
+/* Onboarding */
+"onboarding.name.title" = "מה שמך?";
+"onboarding.name.subtitle" = "מרקוס יתאים את הפרקטיקה היומית שלך בדיוק עבורך.";
+"onboarding.name.placeholder" = "שמך";
+
+"onboarding.profile.title" = "הקשר חייך";
+"onboarding.profile.subtitle" = "עזור למרקוס לכוון חוכמה שפוגעת בול במקום.";
+
+"onboarding.profession.label" = "המקצוע שלך";
+"onboarding.obstacle.label" = "האתגר המרכזי שלך";
+
+"onboarding.time.title" = "קבע את הקצב שלך";
+"onboarding.time.subtitle" = "מרקוס יגיע אליך ברגעים הנכונים — ללא רעש מיותר.";
+"onboarding.morning.label" = "יישור בוקר";
+"onboarding.evening.label" = "רפלקציה ערבית";
+"onboarding.begin" = "התחל את הפרקטיקה";
+
+/* Common */
+"action.continue" = "המשך";
+
+/* Morning */
+"morning.title" = "יישור בוקר";
+"morning.goals.title" = "ההתחייבויות של היום";
+"morning.goals.committed" = "ההתחייבויות שלך";
+"morning.goal.placeholder" = "פעולה ספציפית אחת שתבצע...";
+"morning.commit" = "התחייב למטרות האלה";
+"morning.evening_review" = "רפלקציה ערבית";
+
+/* Evening */
+"evening.title" = "רפלקציה ערבית";
+"evening.subtitle" = "סיום יום";
+"evening.goals.title" = "ההתחייבויות שלך";
+"evening.reflection.title" = "מה למדת?";
+"evening.reflection.placeholder" = "הערה קצרה על היום...";
+"evening.save" = "שמור רפלקציה";
+"evening.saved" = "הרפלקציה נשמרה";

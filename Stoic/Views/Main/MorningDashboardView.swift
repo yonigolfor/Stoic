@@ -66,12 +66,12 @@ struct MorningDashboardView: View {
                         .textCase(.uppercase)
                 }
 
-                Text(quote.text)
+                Text(quote.localizedText)
                     .font(.system(size: 22, weight: .medium, design: .serif))
                     .foregroundStyle(Color.stoicTextPrimary)
                     .lineSpacing(6)
 
-                Text("— \(quote.author)")
+                Text("— \(quote.localizedAuthor)")
                     .font(.system(size: 14, weight: .regular))
                     .foregroundStyle(Color.stoicTextSecondary)
             }
@@ -79,7 +79,12 @@ struct MorningDashboardView: View {
     }
 
     private func contextLine(profile: UserProfile) -> String {
-        "\(profile.name) · \(profile.profession) · \(profile.coreObstacle)"
+        if LanguageService.isHebrew {
+            let prof = Profession(rawValue: profile.profession)?.localizedLabel ?? profile.profession
+            let obs = CoreObstacle(rawValue: profile.coreObstacle)?.localizedLabel ?? profile.coreObstacle
+            return "\(profile.name) · \(prof) · \(obs)"
+        }
+        return "\(profile.name) · \(profile.profession) · \(profile.coreObstacle)"
     }
 
     private var goalsSection: some View {
