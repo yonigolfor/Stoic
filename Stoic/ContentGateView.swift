@@ -6,7 +6,11 @@ struct ContentGateView: View {
     var body: some View {
         Group {
             if hasOnboarded {
-                MainSessionView()
+                MainSessionView {
+                    withAnimation(.easeInOut(duration: 0.4)) {
+                        hasOnboarded = false
+                    }
+                }
             } else {
                 OnboardingContainerView {
                     withAnimation(.easeInOut(duration: 0.4)) {
