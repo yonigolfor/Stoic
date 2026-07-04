@@ -155,6 +155,19 @@ extension Color {
 - Single instances providing localized device operations appended with `*Service.swift` or `*Manager.swift`
 - State stores housing active layout execution data appended with `*ViewModel.swift`
 
+### Bilingual Support (Hebrew + English):
+The app is fully bilingual — **Hebrew (he) and English (en)** are both first-class languages.
+
+**Rules that apply everywhere:**
+- Every user-facing string must have both an English and Hebrew version in `Localizable.xcstrings`. Never add UI text in one language only.
+- The `StoicQuote` JSON schema carries parallel fields for every localizable value:
+  - `text` / `text_he` — quote body
+  - `author` / `author_he` — author name transliterated/translated to Hebrew
+  - `one_word_title_en` / `one_word_title_he` — card title
+- When enriching **any** quote entry, all four fields above are **mandatory**. A quote entry is incomplete without `author_he`.
+- Hebrew author names follow standard Israeli transliteration conventions (e.g. Marcus Aurelius → מרקוס אורליוס, Seneca → סנקה, Epictetus → אפיקטטוס).
+- UI layout must support RTL (`layoutDirection(.rightToLeft)`) for Hebrew users — do not hard-code leading/trailing assumptions.
+
 ### Localization Matrix:
 - Never use raw string constants inside views. Implement `String(localized: "key")`. All user text allocations map directly to `Localizable.xcstrings`.
 

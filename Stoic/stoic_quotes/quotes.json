@@ -402,43 +402,103 @@
     },
     {
       "text": "If you want to make progress, put up with being perceived as ignorant or naive in worldly matters, don't aspire to a reputation for sagacity. If you do impress others as somebody, don't altogether believe it. You have to realize, it isn't easy to keep your will in agreement with nature, as well as externals. Caring about the one inevitably means you are going to shortchange the other.",
-      "author": "Epictetus"
+      "author": "Epictetus",
+      "category": "discipline",
+      "emoji": "🤡",
+      "one_word_title_en": "Humble",
+      "one_word_title_he": "אנונימי",
+      "text_he": "אם אתה רוצה להתקדם — תסכים להיראות טיפש בעיני אחרים. אל תחפש מוניטין, חפש יישור קו. לא ניתן לשמור גם על הרצון שלך וגם על מה שחושבים עליך.",
+      "author_he": "אפיקטטוס"
     },
     {
       "text": "Remember to act always as if you were at a symposium. When the food or drink comes around, reach out and take some politely; if it passes you by don't try pulling it back. And if it has not reached you yet, don't let your desire run ahead of you, be patient until your turn comes. Adopt a similar attitude with regard to children, wife, wealth and status, and in time, you will be entitled to dine with the gods. Go further and decline these goods even when they are on offer and you will have a share in the gods' power as well as their company. That is how Diogenes, Heraclitus and philosophers like them came to be called, and considered, divine.",
-      "author": "Epictetus"
+      "author": "Epictetus",
+      "category": "emotional_control",
+      "emoji": "🍽️",
+      "one_word_title_en": "Banquet",
+      "one_word_title_he": "סעודה",
+      "text_he": "פעל תמיד כאילו אתה בסעודה. כשהאוכל מגיע — קח בנימוס. כשהוא עובר הלאה — אל תמשוך בחזרה. כך גם עם כסף, מעמד, ואהבה. מי שמוותר גם כשמציעים — אוכל עם האלים.",
+      "author_he": "אפיקטטוס"
     },
     {
       "text": "Hunger is by far the best spice.",
-      "author": "Mokokoma Mokhonoana"
+      "author": "Mokokoma Mokhonoana",
+      "category": "discipline",
+      "emoji": "🧂",
+      "one_word_title_en": "Seasoned",
+      "one_word_title_he": "תיבול",
+      "text_he": "הרעב הוא התיבול הטוב ביותר שיש.",
+      "author_he": "מוקוקומה מוקהונואנה"
     },
     {
       "text": "Show by a cheerful look that you don't need the help or comfort of others. Standing up - not propped up.",
-      "author": "Marcus Aurelius"
+      "author": "Marcus Aurelius",
+      "category": "discipline",
+      "emoji": "🗿",
+      "one_word_title_en": "Upright",
+      "one_word_title_he": "זקוף",
+      "text_he": "תראה בפנים שלך שאתה לא צריך עזרה או נחמה מאף אחד. עומד — לא נשען.",
+      "author_he": "מרקוס אורליוס"
     },
     {
       "text": "People seek retreats for themselves in the countryside by the seashore, in the hills, and you too have made it your habit to long for that above all else. But this is altogether unphilosophical, when it is possible for you to retreat into yourself whenever you please; for nowhere can one retreat into greater peace or freedom from care than within one’s own soul, especially when a person has such things within him that he merely has to look at them to recover from that moment perfect ease of mind (and by ease of mind I mean nothing other than having one’s mind in good order). So constantly grant yourself this retreat and so renew yourself; but keep within you concise and basic precepts that will be enough, at first encounter, to cleanse you from all distress and to send you back without discontent to the life to which you will return.",
-      "author": "Marcus Aurelius"
+      "author": "Marcus Aurelius",
+      "category": "focus",
+      "emoji": "🏔️",
+      "one_word_title_en": "Inward",
+      "one_word_title_he": "פנימה",
+      "text_he": "אנשים מחפשים מנוחה בטבע, בים, בהרים. אבל הנסיגה הגדולה ביותר היא לתוך עצמך. שם, בכל רגע שתרצה, תמצא שלווה שאף נוף לא יכול לתת.",
+      "author_he": "מרקוס אורליוס"
     },
     {
       "text": "We all die having lived a full life, even those who die while they are being born.",
-      "author": "Mokokoma Mokhonoana"
+      "author": "Mokokoma Mokhonoana",
+      "category": "emotional_control",
+      "emoji": "⭕",
+      "one_word_title_en": "Whole",
+      "one_word_title_he": "שלם",
+      "text_he": "כולנו מתים אחרי חיים מלאים — אפילו מי שמת ברגע לידתו.",
+      "author_he": "מוקוקומה מוקהונואנה"
     },
     {
       "text": "Anxiety is the shadow of what we do not want to lose.",
-      "author": "Mokokoma Mokhonoana"
+      "author": "Mokokoma Mokhonoana",
+      "category": "emotional_control",
+      "emoji": "🌒",
+      "one_word_title_en": "Shadow",
+      "one_word_title_he": "צל",
+      "text_he": "חרדה היא הצל של מה שאנחנו לא רוצים לאבד.",
+      "author_he": "מוקוקומה מוקהונואנה"
     },
     {
       "text": "The triviality of a question does not make a profound answer an impossibility.",
-      "author": "Mokokoma Mokhonoana"
+      "author": "Mokokoma Mokhonoana",
+      "category": "focus",
+      "emoji": "🔭",
+      "one_word_title_en": "Depth",
+      "one_word_title_he": "עומק",
+      "text_he": "שאלה טריוויאלית לא מונעת תשובה עמוקה.",
+      "author_he": "מוקוקומה מוקהונואנה"
     },
     {
       "text": "Being spiritually asleep has deceived the vast majority of people into thinking that poverty is a poor person’s main problem in life. To those who are spiritually awake, poverty is not even a problem.",
-      "author": "Mokokoma Mokhonoana"
+      "author": "Mokokoma Mokhonoana",
+      "category": "focus",
+      "emoji": "😴",
+      "one_word_title_en": "Asleep",
+      "one_word_title_he": "ישן",
+      "text_he": "השינה הרוחנית גרמה לרוב האנשים לחשוב שעוני חומרי הוא הבעיה האמיתית. למי שיש לו עיניים פקוחות — עוני כלל אינו הבעיה.",
+      "author_he": "מוקוקומה מוקהונואנה"
     },
     {
       "text": "You can wear an expensive watch and still be late.",
-      "author": "Mokokoma Mokhonoana"
+      "author": "Mokokoma Mokhonoana",
+      "category": "discipline",
+      "emoji": "⌚",
+      "one_word_title_en": "Decoy",
+      "one_word_title_he": "ויטרינה",
+      "text_he": "אתה יכול ללבוש שעון יקר — ועדיין לאחר.",
+      "author_he": "מוקוקומה מוקהונואנה"
     },
     {
       "text": "A family member is initially loved out of expectation … and is eventually loved out of habit.",
