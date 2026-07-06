@@ -5,6 +5,7 @@ struct MorningDashboardView: View {
     @Environment(\.modelContext) private var modelContext
     @Bindable var viewModel: MorningViewModel
     @State private var showEvening = false
+    @State private var showCopied = false
 
     var body: some View {
         ScrollView {
@@ -58,13 +59,49 @@ struct MorningDashboardView: View {
     private func quoteCard(_ quote: StoicQuote) -> some View {
         PremiumCardView {
             VStack(alignment: .leading, spacing: 14) {
-                if let profile = viewModel.userProfile {
-                    Text(contextLine(profile: profile))
-                        .font(.system(size: 12, weight: .semibold))
-                        .foregroundStyle(Color.stoicAccent)
-                        .tracking(0.6)
-                        .textCase(.uppercase)
+                HStack(alignment: .top) {
+                    if let profile = viewModel.userProfile {
+                        Text(contextLine(profile: profile))
+                            .font(.system(size: 12, weight: .semibold))
+                            .foregroundStyle(Color.stoicAccent)
+                            .tracking(0.6)
+                            .textCase(.uppercase)
+                    }
+
+                    Spacer()
+
+                    Button {
+                        UIPasteboard.general.string = "\"\(quote.localizedText)\" - \(quote.localizedAuthor)"
+                        HapticService.shared.light()
+                        withAnimation(.easeInOut(duration: 0.2)) { showCopied = true }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            withAnimation(.easeInOut(duration: 0.3)) { showCopied = false }
+                        }
+                    } label: {
+                        Image(systemName: showCopied ? "checkmark" : "doc.on.doc")
+                            .font(.system(size: 13, weight: .regular))
+                            .foregroundStyle(showCopied ? Color.stoicAccent : Color.stoicTextSecondary)
+                            .animation(.easeInOut(duration: 0.2), value: showCopied)
+                            .frame(width: 24, height: 24)
+                            .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                    .overlay(alignment: .bottom) {
+                        if showCopied {
+                            Text(LanguageService.isHebrew ? "הועתק!" : "Copied!")
+                                .font(.system(size: 11, weight: .semibold))
+                                .foregroundStyle(Color.stoicBackground)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 4)
+                                .background(Color.stoicAccent, in: RoundedRectangle(cornerRadius: 6, style: .continuous))
+                                .fixedSize()
+                                .offset(y: 28)
+                                .transition(.opacity.combined(with: .scale(scale: 0.85, anchor: .top)))
+                        }
+                    }
+                    .zIndex(1)
                 }
+                .zIndex(1)
 
                 Text(quote.localizedText)
                     .font(.system(size: 22, weight: .medium, design: .serif))
