@@ -6,7 +6,7 @@ struct OnboardingContainerView: View {
     @State private var viewModel = OnboardingViewModel()
     let onComplete: () -> Void
 
-    private let totalSteps = 3
+    private let totalSteps = 4
 
     var body: some View {
         ZStack {
@@ -20,9 +20,10 @@ struct OnboardingContainerView: View {
                 TabView(selection: $viewModel.currentStep) {
                     NameSetupView(viewModel: viewModel).tag(0)
                     ProfileSetupView(viewModel: viewModel).tag(1)
+                    OnboardingIntentionalityView(viewModel: viewModel).tag(2)
                     TimeSetupView(viewModel: viewModel) {
                         Task { await complete() }
-                    }.tag(2)
+                    }.tag(3)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
                 .animation(.easeInOut(duration: 0.35), value: viewModel.currentStep)

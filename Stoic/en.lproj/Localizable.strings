@@ -21,8 +21,25 @@
 "onboarding.evening.label" = "Evening reflection";
 "onboarding.begin" = "Begin the practice";
 
+"onboarding.intentionality.title" = "A Stoic controls where their attention goes.";
+"onboarding.intentionality.subtitle" = "Select the apps that hijack your focus. We will create a mirror for your habits.";
+"onboarding.intentionality.cta" = "Take Control of Your Independence";
+
 /* Common */
 "action.continue" = "Continue";
+
+/* Dashboard */
+"dashboard.focusVictories.title" = "Focus Victories";
+"dashboard.focusVictories.subtitle" = "You saved your focus %d times this week";
+"dashboard.focusVictories.streak" = "%d day streak";
+
+/* Mirror Gate */
+"mirrorGate.title" = "Is this intentional?";
+"mirrorGate.subtitle" = "Take control of your attention.";
+"mirrorGate.stepBack" = "Step Back (Preserve Focus)";
+"mirrorGate.continueAnyway" = "Continue anyway";
+"mirrorGate.unlocked.title" = "Access granted";
+"mirrorGate.unlocked.subtitle" = "The restriction is lifted for the next 15 minutes.";
 
 /* Morning */
 "morning.title" = "Morning Alignment";

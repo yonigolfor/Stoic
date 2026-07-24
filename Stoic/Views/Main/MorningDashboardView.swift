@@ -11,6 +11,15 @@ struct MorningDashboardView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
                 dateHeader
+
+                if PersistenceService.shared.focusVictoriesCount > 0 {
+                    FocusVictoryCard(
+                        weekCount: PersistenceService.shared.focusVictoriesWeekCount,
+                        weeklyGoal: PersistenceService.weeklyFocusGoal,
+                        streakDays: PersistenceService.shared.focusStreakDays
+                    )
+                }
+
                 if let quote = viewModel.quote { quoteCard(quote) }
 
                 if viewModel.todayCommitment == nil {

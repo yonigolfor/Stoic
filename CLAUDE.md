@@ -26,6 +26,7 @@ Marcus is a premium, distraction-free "Active Stoicism" platform designed for hi
 2. **Morning Alignment:** Serves exactly ONE algorithmically filtered quote per day matching the user's cognitive block, requiring the user to commit to 2 highly specific, micro-actionable daily goals.
 3. **Evening Accountability:** A seamless friction-free reflection phase to log goal completion statuses and save structural journal data locally.
 4. **100% Native Architecture:** Zero network dependency, zero servers, full SwiftData execution, and local scheduled push configurations.
+5. **Friction Gate (Screen Time):** Opening a distracting app the user has restricted surfaces a native Shield → a live front-camera "Mirror Gate" pattern-interrupt, asking the user to consciously choose to step back or continue. See the dedicated **Stoic Friction Gate** section below for the full architecture and hard-won platform constraints.
 
 ---
 
@@ -59,39 +60,52 @@ Marcus is a premium, distraction-free "Active Stoicism" platform designed for hi
 ## File Structure
 
 ```
-Marcus/
-├── MarcusApp.swift               # App entry point, SwiftData Container initialization
-├── ContentGateView.swift         # Structural root view handling onboarding routing
+Stoic/
+├── Stoic/
+│   ├── StoicApp.swift             # App entry point, SwiftData Container init, scenePhase-driven Mirror Gate trigger
+│   ├── AppDelegate.swift          # UNUserNotificationCenterDelegate — routes Mirror Gate notification taps
+│   ├── ContentGateView.swift      # Structural root view handling onboarding routing
+│   │
+│   ├── Models/
+│   │   ├── UserProfile.swift      # SwiftData Entity: Name, Profession, CoreObstacle, Notification Preferences
+│   │   ├── DailyCommitment.swift  # SwiftData Entity: Date, QuoteID, TargetGoals[String], CompletedFlags[Bool]
+│   │   ├── StoicQuote.swift       # Codable Decodable Struct mapping the local JSON schema
+│   │   └── FocusAppOption.swift   # Closed chip list (TikTok/Instagram/Snapchat/X/YouTube) shown pre-picker
+│   │
+│   ├── ViewModels/
+│   │   ├── OnboardingViewModel.swift  # Validation state + Screen Time authorization/shield application
+│   │   ├── MorningViewModel.swift     # Business logic for JSON parsing, filtering, and goal generation
+│   │   ├── EveningViewModel.swift     # Evaluation of metrics, streak building, and reflection storage
+│   │   └── MirrorGateViewModel.swift  # Camera lifecycle + Step Back / Continue Anyway decisions
+│   │
+│   ├── Views/
+│   │   ├── Onboarding/
+│   │   │   ├── OnboardingContainerView.swift          # 4-step TabView wizard
+│   │   │   └── Steps/ProfileSetupView.swift, TimeSetupView.swift, NameSetupView.swift,
+│   │   │       OnboardingIntentionalityView.swift      # Friction Gate app selection + Screen Time auth
+│   │   ├── Main/
+│   │   │   ├── MorningDashboardView.swift  # Premium focal interface for the day's text + Focus Victories card
+│   │   │   └── EveningReflectionView.swift # Minimalist input form and status indicators
+│   │   ├── MirrorGate/
+│   │   │   └── StoicMirrorGateView.swift   # Live front-camera friction screen (see Friction Gate section below)
+│   │   └── Components/
+│   │       ├── PremiumCardView.swift       # Uniform modular container view
+│   │       ├── StoicButton.swift           # Standardized haptic-enabled custom native button
+│   │       └── FocusVictoryCard.swift      # Dashboard ring-progress + streak card
+│   │
+│   ├── Services/
+│   │   ├── PersistenceService.swift    # App Group UserDefaults layer (shared with extensions)
+│   │   ├── HapticService.swift         # Direct UIImpactFeedbackGenerator / SensoryFeedback wrapper
+│   │   ├── NotificationManager.swift   # Orchestrates local background notification triggers
+│   │   ├── CameraPreviewService.swift  # AVCaptureSession wrapper for the Mirror Gate
+│   │   └── ScreenTimeGateService.swift # ManagedSettingsStore + DeviceActivity grace-period logic
+│   │
+│   └── Extensions/
+│       └── Color+Theme.swift       # Unified static palette configuration
 │
-├── Models/
-│   ├── UserProfile.swift         # SwiftData Entity: Name, Profession, CoreObstacle, Notification Preferences
-│   ├── DailyCommitment.swift     # SwiftData Entity: Date, QuoteID, TargetGoals[String], CompletedFlags[Bool]
-│   └── StoicQuote.swift          # Codable Decodable Struct mapping the local JSON schema
-│
-├── ViewModels/
-│   ├── OnboardingViewModel.swift # Handles validation state for the initial setups
-│   ├── MorningViewModel.swift    # Business logic for JSON parsing, filtering, and goal generation
-│   └── EveningViewModel.swift    # Evaluation of metrics, streak building, and reflection storage
-│
-├── Views/
-│   ├── Onboarding/
-│   │   ├── OnboardingContainerView.swift # Managed multi-step wizard layout
-│   │   ├── Steps/ProfileSetupView.swift  # Closed list choices (Profession / Obstacle)
-│   │   └── Steps/TimeSetupView.swift     # UNNotification integration time pickers
-│   ├── Main/
-│   │   ├── MorningDashboardView.swift    # Premium focal interface for the day's text
-│   │   └── EveningReflectionView.swift   # Minimalist input form and status indicators
-│   └── Components/
-│       ├── PremiumCardView.swift         # Uniform modular container view
-│       └── StoicButton.swift             # Standardized haptic-enabled custom native button
-│
-├── Services/
-│   ├── PersistenceService.swift  # Light UserDefaults layer for absolute primitives
-│   ├── HapticService.swift       # Direct UIImpactFeedbackGenerator / SensoryFeedback wrapper
-│   └── NotificationManager.swift # Orchestrates local background notification triggers
-│
-└── Extensions/
-    └── Color+Theme.swift         # Unified static palette configuration
+├── StoicShieldConfiguration/       # Extension target — ShieldConfigurationDataSource
+├── StoicShieldAction/              # Extension target — ShieldActionDelegate
+└── StoicActivityMonitor/           # Extension target — DeviceActivityMonitor
 ```
 
 ---
@@ -145,6 +159,14 @@ extension Color {
 | `morningNotificationTime` | `String` | Stored system configuration string representation |
 | `eveningNotificationTime` | `String` | Stored system configuration string representation |
 | `currentStreak` | `Int` | Cached value for structural dashboard representation |
+| `preferredLanguage` | `String?` | Read by the extensions (via App Group) to localize Shield/notification copy |
+| `selectedFocusAppsRaw` | `Data?` | Encoded `FamilyActivitySelection` from onboarding; read by `StoicActivityMonitor` to re-shield |
+| `lastMirrorGateGraceGrantedAt` | `Date?` | Diagnostic timestamp of the last granted grace window |
+| `pendingMirrorGateTrigger` | `Bool` | Set by `AppDelegate` on notification tap; consumed by `StoicApp` once `scenePhase == .active` |
+| `focusVictoriesCount` / `focusVictoriesWeekCount` / `focusStreakDays` | `Int` | Dashboard "Focus Victories" card state, updated via `recordFocusVictory()` |
+| `lastGraceMonitoringError` | `String?` | Diagnostic: `DeviceActivityCenter.startMonitoring`'s thrown error (if any) from the last grace-period request. `nil` = registered successfully |
+
+`PersistenceService` reads from App Group suite `group.com.yonigolfor.Stoic` (not `.standard`) so the three Screen Time extensions can share this state — this is required, not incidental.
 
 ---
 
@@ -188,19 +210,68 @@ Marcus is a raw, premium Active Stoicism platform for high-performers — not an
 
 ---
 
+## Stoic Friction Gate (Screen Time Integration)
+
+### What it does
+When the user opens an app they've chosen to restrict (TikTok, Instagram, etc.), a native system Shield intercepts the launch. Tapping the shield's single button fires a local notification; tapping *that* drops the user directly into `StoicMirrorGateView` — a live front-camera screen asking them to consciously choose: **Step Back** (stay in Stoic, counted as a win on the dashboard) or **Continue Anyway** (temporarily lift the restriction for a fixed window).
+
+### Two-hop architecture (why it's two hops, not one)
+`ShieldConfigurationExtension` / `ShieldActionExtension` are sandboxed system UI — no custom SwiftUI, no camera, no `AVCaptureSession` is possible there. The only place a live camera can run is inside Stoic's own app process. So: **native Shield → tap → local notification → tap → in-app Mirror Gate**. This is the same shape used by Opal, One Sec, and Freedom, for the same platform reason.
+
+### Targets
+Four targets total, all sharing App Group `group.com.yonigolfor.Stoic`:
+- `Stoic` — main app.
+- `StoicShieldConfiguration` — `ShieldConfigurationDataSource`. Renders the native Shield. Ceiling: title/subtitle/icon/one button, a single flat `backgroundColor`, and a system `backgroundBlurStyle` — **no gradients, no custom views** are possible here, confirmed against the `ManagedSettingsUI` interface.
+- `StoicShieldAction` — `ShieldActionDelegate`. Handles the button tap: schedules a `.timeSensitive` local notification and returns `.none` (deliberately does **not** dismiss the shield — see constraints below).
+- `StoicActivityMonitor` — `DeviceActivityMonitor`. Re-applies the shield when the grace window ends (`intervalDidEnd`).
+
+New targets must be created via Xcode's GUI wizard (`File → New → Target`) — hand-editing whole new `PBXNativeTarget` blocks into `project.pbxproj` risks corrupting it. Once a target exists, dropping Swift files into its folder is enough (`PBXFileSystemSynchronizedRootGroup` auto-includes them — no manual pbxproj registration needed).
+
+### Entitlements
+- `Stoic.entitlements`: `com.apple.developer.family-controls`, `com.apple.security.application-groups` (the group above), `com.apple.developer.usernotifications.time-sensitive`.
+- Each extension's own `.entitlements`: `com.apple.security.application-groups` only — Family Controls is main-app-only.
+- `com.apple.developer.family-controls` does **not** require Apple's special distribution-approval form for local development, only for App Store distribution — verified empirically via `xcodebuild -allowProvisioningUpdates` producing a real signed on-device build.
+
+### Hard platform constraints (empirically confirmed — don't re-attempt these)
+- **No API opens the containing app from `ShieldActionDelegate`.** `extensionContext`, `UIApplication`, `@Environment(\.openURL)` are all unavailable there (real compile errors, not editor noise). The only sanctioned handoff is a local notification the user taps — corroborated by Apple DTS forum threads (FB17261679, FB22696417, FB15079668). A private-API workaround (`LSApplicationWorkspace`) caused a real App Store rejection (guideline 2.5.1) elsewhere — do not attempt it.
+- **`Application.bundleIdentifier` / `localizedDisplayName` come back `nil`** for third-party apps inside `ShieldConfigurationDataSource`, even though the struct declares them non-privately. Confirmed by capturing and displaying the value on-device. Stoic can never know *which* specific app a given Shield instance is blocking.
+- **No public API reads the app switcher / previously-frontmost app** — checked directly against the UIKit / FamilyControls / DeviceActivity SDK interfaces; nothing like `recentApplications`/`frontmostApplication` exists for third-party apps.
+- **Net effect:** Stoic cannot auto-detect which app to return to, and cannot force-foreground another app even if it knew which one. "Continue Anyway" can only unshield + show an honest "Access granted" confirmation — the user always switches back manually. Every app in this category has this same ceiling; it's not a Stoic-specific gap.
+- **`ShieldActionResponse.close` returns to the Home Screen, never into the app that was shielded** — even Apple's own default Shield can't resume the intercepted launch. Once a Shield intercepts, that specific launch attempt is gone.
+- **Cold-launch notification race:** if Stoic isn't already running, `AppDelegate.didReceive` can fire before SwiftUI's `.onReceive` subscriber exists, silently dropping a live `NotificationCenter` broadcast. Fixed by also persisting `pendingMirrorGateTrigger` (App Group `UserDefaults`), which `StoicApp` checks via `.onChange(of: scenePhase)` once the scene is genuinely `.active`.
+- **`ShieldAction` enum cases are `.primaryButtonPressed` / `.secondaryButtonPressed`**, not `.primary`/`.secondary` — an easy naming trap in `ShieldActionExtension`'s switch.
+- **`DeviceActivitySchedule` enforces an undocumented minimum interval length.** `DeviceActivityCenter.MonitoringError.intervalTooShort` is a real case, and a 10-minute (and earlier 2-minute) grace window hit it in practice — `startMonitoring` threw, was previously swallowed by `try?`, and the shield silently never came back. **15 minutes is the current known-working floor** (confirmed on-device via `PersistenceService.lastGraceMonitoringError`, surfaced by the 🩺 debug button in `MainSessionView`). Never swallow `DeviceActivityCenter.startMonitoring`'s error with `try?` again — always `do/catch` and persist it, since there's no other way to observe a Screen Time extension's failures.
+
+### Grace period mechanism
+`ScreenTimeGateService.grantGracePeriod(minutes:)` (currently called with **15** from `MirrorGateViewModel.continueAnyway` — see the `intervalTooShort` constraint above for why not lower): removes the app(s) from `ManagedSettingsStore().shield.applications` immediately, then schedules a one-shot `DeviceActivitySchedule` (`intervalStart` = now, `intervalEnd` = now + minutes) via `DeviceActivityCenter`. `StoicActivityMonitor.intervalDidEnd` re-applies the shield when it fires. This is a **fixed wall-clock window from the tap**, not usage time — a usage-threshold version (`DeviceActivityEvent`) was tried and reverted per product decision, since a fixed window is easier to predict even though it can still interrupt mid-session exactly when the window elapses.
+
+### Testing
+Screen Time APIs **do not run in the Simulator** — a physical device is required. Build and install from the CLI (works even if Xcode's own GUI is closed or its scheme list is stale):
+```bash
+xcodebuild -project Stoic.xcodeproj -scheme Stoic -destination "id=<device-UDID>" -configuration Debug -allowProvisioningUpdates build
+xcrun devicectl device install app --device <device-UDID> "<DerivedData path>/Build/Products/Debug-iphoneos/Stoic.app"
+```
+
+`MainSessionView`'s `#if DEBUG` overlay has four tools for exercising this flow without waiting on a real Shield trigger: reset onboarding, preview the Mirror Gate directly (camera icon), clear the shield (unlock icon), and a 🩺 diagnostic alert (`lastMirrorGateGraceGrantedAt` / `lastGraceMonitoringError` / whether the store currently has an active shield) — the last one is how the `intervalTooShort` bug above was actually diagnosed, since Screen Time extensions have no other visible failure signal.
+
+---
+
 ## Building the App
 
 ```bash
 DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer \
 xcodebuild \
-  -project /Users/user/Desktop/apps/Marcus/Marcus.xcodeproj \
-  -scheme Marcus \
+  -project /Users/yonigolfor/Desktop/Code/apps/Stoic/Stoic.xcodeproj \
+  -scheme Stoic \
   -destination "platform=iOS Simulator,name=iPhone 17" \
   -configuration Debug \
   build 2>&1 | grep -E "error:|warning:|BUILD SUCCEEDED|BUILD FAILED"
 ```
 
+For anything touching Screen Time/Family Controls, use a physical device destination (`-destination "id=<device-UDID>"`) instead — see Testing above.
+
 ### Engineering Gotchas & Edge Cases:
 
-- **SourceKit Warnings:** Syntactic diagnostics inside Xcode for SwiftData macros are occasionally slow or produce false positives. **Always trust the explicit output of the CLI compilation step over editor visuals.**
+- **SourceKit Warnings:** Syntactic diagnostics inside Xcode (and shown inline after file edits) are frequently stale or false — this got worse, not better, after the Screen Time extension targets were added (macOS-target-unavailable warnings on files that only ever run on iOS are expected noise). **Always trust the explicit output of the CLI compilation step over editor/inline diagnostics.**
 - **Notification Scheduling:** Remember that `UNUserNotificationCenter` configurations fail on the Simulator if authorization hasn't been granted via permissions sheet alerts. Implement clean fallback logic.
+- **Xcode "Stoic" target/scheme disappearing:** After adding the extension targets, Xcode's own Scheme picker (and occasionally the Targets list) periodically stops showing the `Stoic` target — this is an Xcode UI/index cache bug, not project corruption (the `project.pbxproj` itself stays valid throughout; `xcodebuild`/CLI builds keep working the whole time regardless). Fix in order of effort: (1) delete `Stoic.xcodeproj/xcuserdata/*/xcschemes/xcschememanagement.plist` and relaunch Xcode; (2) also clear DerivedData for the project and relaunch; (3) durable fix — `Product → Scheme → New Scheme…`, pick target `Stoic` explicitly, which writes a real `.xcscheme` file that stops depending on Xcode's autocreate behavior entirely.

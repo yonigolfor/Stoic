@@ -21,8 +21,25 @@
 "onboarding.evening.label" = "רפלקציה ערבית";
 "onboarding.begin" = "התחל את הפרקטיקה";
 
+"onboarding.intentionality.title" = "אדם סטואי יודע לקחת שליטה על לאן הזמן שלו הולך.";
+"onboarding.intentionality.subtitle" = "בחר את האפליקציות שגוזלות ממך את הפוקוס. אנחנו נייצר מראה להרגלים שלך.";
+"onboarding.intentionality.cta" = "קח שליטה על העצמאות שלך";
+
 /* Common */
 "action.continue" = "המשך";
+
+/* Dashboard */
+"dashboard.focusVictories.title" = "ניצחונות פוקוס";
+"dashboard.focusVictories.subtitle" = "השבוע שמרת על הפוקוס שלך %d פעמים";
+"dashboard.focusVictories.streak" = "רצף של %d ימים";
+
+/* Mirror Gate */
+"mirrorGate.title" = "?האם זה מכוון";
+"mirrorGate.subtitle" = "קח שליטה על תשומת הלב שלך";
+"mirrorGate.stepBack" = "קח צעד אחורה (שמור על פוקוס)";
+"mirrorGate.continueAnyway" = "להמשיך בכל זאת";
+"mirrorGate.unlocked.title" = "הגישה שוחררה";
+"mirrorGate.unlocked.subtitle" = "ההגבלה הוסרה ל-15 הדקות הקרובות.";
 
 /* Morning */
 "morning.title" = "יישור בוקר";

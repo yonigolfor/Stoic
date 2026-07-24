@@ -6,11 +6,115 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5390DD2C3010F31800231D66 /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5390DD2B3010F31800231D66 /* DeviceActivity.framework */; };
+		5390DD343010F31800231D66 /* StoicActivityMonitor.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5390DD293010F31800231D66 /* StoicActivityMonitor.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5390DD403010F34B00231D66 /* ManagedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5390DD3F3010F34B00231D66 /* ManagedSettings.framework */; };
+		5390DD423010F34B00231D66 /* ManagedSettingsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5390DD413010F34B00231D66 /* ManagedSettingsUI.framework */; };
+		5390DD4A3010F34B00231D66 /* StoicShieldConfiguration.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5390DD3E3010F34B00231D66 /* StoicShieldConfiguration.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5390DD543010F36100231D66 /* ManagedSettings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5390DD3F3010F34B00231D66 /* ManagedSettings.framework */; };
+		5390DD5C3010F36100231D66 /* StoicShieldAction.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5390DD533010F36100231D66 /* StoicShieldAction.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5390DD323010F31800231D66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE8400002FF3C96800D803A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5390DD283010F31800231D66;
+			remoteInfo = StoicActivityMonitor;
+		};
+		5390DD483010F34B00231D66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE8400002FF3C96800D803A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5390DD3D3010F34B00231D66;
+			remoteInfo = StoicShieldConfiguration;
+		};
+		5390DD5A3010F36100231D66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE8400002FF3C96800D803A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5390DD523010F36100231D66;
+			remoteInfo = StoicShieldAction;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5390DD353010F31800231D66 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5390DD5C3010F36100231D66 /* StoicShieldAction.appex in Embed Foundation Extensions */,
+				5390DD343010F31800231D66 /* StoicActivityMonitor.appex in Embed Foundation Extensions */,
+				5390DD4A3010F34B00231D66 /* StoicShieldConfiguration.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		5390DD293010F31800231D66 /* StoicActivityMonitor.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StoicActivityMonitor.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5390DD2B3010F31800231D66 /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
+		5390DD3E3010F34B00231D66 /* StoicShieldConfiguration.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StoicShieldConfiguration.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5390DD3F3010F34B00231D66 /* ManagedSettings.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettings.framework; path = System/Library/Frameworks/ManagedSettings.framework; sourceTree = SDKROOT; };
+		5390DD413010F34B00231D66 /* ManagedSettingsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ManagedSettingsUI.framework; path = Library/Frameworks/ManagedSettingsUI.framework; sourceTree = DEVELOPER_DIR; };
+		5390DD533010F36100231D66 /* StoicShieldAction.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StoicShieldAction.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8400082FF3C96800D803A7 /* Stoic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stoic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5390DD383010F31800231D66 /* Exceptions for "StoicActivityMonitor" folder in "StoicActivityMonitor" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 5390DD283010F31800231D66 /* StoicActivityMonitor */;
+		};
+		5390DD4B3010F34B00231D66 /* Exceptions for "StoicShieldConfiguration" folder in "StoicShieldConfiguration" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 5390DD3D3010F34B00231D66 /* StoicShieldConfiguration */;
+		};
+		5390DD5D3010F36100231D66 /* Exceptions for "StoicShieldAction" folder in "StoicShieldAction" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 5390DD523010F36100231D66 /* StoicShieldAction */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		5390DD2D3010F31800231D66 /* StoicActivityMonitor */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5390DD383010F31800231D66 /* Exceptions for "StoicActivityMonitor" folder in "StoicActivityMonitor" target */,
+			);
+			path = StoicActivityMonitor;
+			sourceTree = "<group>";
+		};
+		5390DD433010F34B00231D66 /* StoicShieldConfiguration */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5390DD4B3010F34B00231D66 /* Exceptions for "StoicShieldConfiguration" folder in "StoicShieldConfiguration" target */,
+			);
+			path = StoicShieldConfiguration;
+			sourceTree = "<group>";
+		};
+		5390DD553010F36100231D66 /* StoicShieldAction */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5390DD5D3010F36100231D66 /* Exceptions for "StoicShieldAction" folder in "StoicShieldAction" target */,
+			);
+			path = StoicShieldAction;
+			sourceTree = "<group>";
+		};
 		CE84000A2FF3C96800D803A7 /* Stoic */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Stoic;
@@ -19,6 +123,31 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5390DD263010F31800231D66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5390DD2C3010F31800231D66 /* DeviceActivity.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5390DD3B3010F34B00231D66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5390DD403010F34B00231D66 /* ManagedSettings.framework in Frameworks */,
+				5390DD423010F34B00231D66 /* ManagedSettingsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5390DD503010F36100231D66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5390DD543010F36100231D66 /* ManagedSettings.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE8400052FF3C96800D803A7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -29,10 +158,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5390DD2A3010F31800231D66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5390DD2B3010F31800231D66 /* DeviceActivity.framework */,
+				5390DD3F3010F34B00231D66 /* ManagedSettings.framework */,
+				5390DD413010F34B00231D66 /* ManagedSettingsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE8400092FF3C96800D803A7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				CE8400082FF3C96800D803A7 /* Stoic.app */,
+				5390DD293010F31800231D66 /* StoicActivityMonitor.appex */,
+				5390DD3E3010F34B00231D66 /* StoicShieldConfiguration.appex */,
+				5390DD533010F36100231D66 /* StoicShieldAction.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -41,6 +183,10 @@
 			isa = PBXGroup;
 			children = (
 				CE84000A2FF3C96800D803A7 /* Stoic */,
+				5390DD2D3010F31800231D66 /* StoicActivityMonitor */,
+				5390DD433010F34B00231D66 /* StoicShieldConfiguration */,
+				5390DD553010F36100231D66 /* StoicShieldAction */,
+				5390DD2A3010F31800231D66 /* Frameworks */,
 				CE8400092FF3C96800D803A7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +194,72 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5390DD283010F31800231D66 /* StoicActivityMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5390DD393010F31800231D66 /* Build configuration list for PBXNativeTarget "StoicActivityMonitor" */;
+			buildPhases = (
+				5390DD253010F31800231D66 /* Sources */,
+				5390DD263010F31800231D66 /* Frameworks */,
+				5390DD273010F31800231D66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				5390DD2D3010F31800231D66 /* StoicActivityMonitor */,
+			);
+			name = StoicActivityMonitor;
+			packageProductDependencies = (
+			);
+			productName = StoicActivityMonitor;
+			productReference = 5390DD293010F31800231D66 /* StoicActivityMonitor.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		5390DD3D3010F34B00231D66 /* StoicShieldConfiguration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5390DD4C3010F34B00231D66 /* Build configuration list for PBXNativeTarget "StoicShieldConfiguration" */;
+			buildPhases = (
+				5390DD3A3010F34B00231D66 /* Sources */,
+				5390DD3B3010F34B00231D66 /* Frameworks */,
+				5390DD3C3010F34B00231D66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				5390DD433010F34B00231D66 /* StoicShieldConfiguration */,
+			);
+			name = StoicShieldConfiguration;
+			packageProductDependencies = (
+			);
+			productName = StoicShieldConfiguration;
+			productReference = 5390DD3E3010F34B00231D66 /* StoicShieldConfiguration.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		5390DD523010F36100231D66 /* StoicShieldAction */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5390DD5E3010F36100231D66 /* Build configuration list for PBXNativeTarget "StoicShieldAction" */;
+			buildPhases = (
+				5390DD4F3010F36100231D66 /* Sources */,
+				5390DD503010F36100231D66 /* Frameworks */,
+				5390DD513010F36100231D66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				5390DD553010F36100231D66 /* StoicShieldAction */,
+			);
+			name = StoicShieldAction;
+			packageProductDependencies = (
+			);
+			productName = StoicShieldAction;
+			productReference = 5390DD533010F36100231D66 /* StoicShieldAction.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		CE8400072FF3C96800D803A7 /* Stoic */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE8400132FF3C96B00D803A7 /* Build configuration list for PBXNativeTarget "Stoic" */;
@@ -55,10 +267,14 @@
 				CE8400042FF3C96800D803A7 /* Sources */,
 				CE8400052FF3C96800D803A7 /* Frameworks */,
 				CE8400062FF3C96800D803A7 /* Resources */,
+				5390DD353010F31800231D66 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5390DD333010F31800231D66 /* PBXTargetDependency */,
+				5390DD493010F34B00231D66 /* PBXTargetDependency */,
+				5390DD5B3010F36100231D66 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				CE84000A2FF3C96800D803A7 /* Stoic */,
@@ -77,9 +293,18 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2650;
+				LastSwiftUpdateCheck = 2640;
 				LastUpgradeCheck = 2650;
 				TargetAttributes = {
+					5390DD283010F31800231D66 = {
+						CreatedOnToolsVersion = 26.4.1;
+					};
+					5390DD3D3010F34B00231D66 = {
+						CreatedOnToolsVersion = 26.4.1;
+					};
+					5390DD523010F36100231D66 = {
+						CreatedOnToolsVersion = 26.4.1;
+					};
 					CE8400072FF3C96800D803A7 = {
 						CreatedOnToolsVersion = 26.5;
 					};
@@ -101,11 +326,35 @@
 			projectRoot = "";
 			targets = (
 				CE8400072FF3C96800D803A7 /* Stoic */,
+				5390DD283010F31800231D66 /* StoicActivityMonitor */,
+				5390DD3D3010F34B00231D66 /* StoicShieldConfiguration */,
+				5390DD523010F36100231D66 /* StoicShieldAction */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5390DD273010F31800231D66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5390DD3C3010F34B00231D66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5390DD513010F36100231D66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE8400062FF3C96800D803A7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -116,6 +365,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5390DD253010F31800231D66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5390DD3A3010F34B00231D66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5390DD4F3010F36100231D66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE8400042FF3C96800D803A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -125,7 +395,214 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5390DD333010F31800231D66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5390DD283010F31800231D66 /* StoicActivityMonitor */;
+			targetProxy = 5390DD323010F31800231D66 /* PBXContainerItemProxy */;
+		};
+		5390DD493010F34B00231D66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5390DD3D3010F34B00231D66 /* StoicShieldConfiguration */;
+			targetProxy = 5390DD483010F34B00231D66 /* PBXContainerItemProxy */;
+		};
+		5390DD5B3010F36100231D66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5390DD523010F36100231D66 /* StoicShieldAction */;
+			targetProxy = 5390DD5A3010F36100231D66 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		5390DD363010F31800231D66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StoicActivityMonitor/StoicActivityMonitor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6Q59R4QBXF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StoicActivityMonitor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StoicActivityMonitor;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonigolfor.Stoic.StoicActivityMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5390DD373010F31800231D66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StoicActivityMonitor/StoicActivityMonitor.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6Q59R4QBXF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StoicActivityMonitor/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StoicActivityMonitor;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonigolfor.Stoic.StoicActivityMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5390DD4D3010F34B00231D66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StoicShieldConfiguration/StoicShieldConfiguration.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6Q59R4QBXF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StoicShieldConfiguration/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StoicShieldConfiguration;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonigolfor.Stoic.StoicShieldConfiguration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5390DD4E3010F34B00231D66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StoicShieldConfiguration/StoicShieldConfiguration.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6Q59R4QBXF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StoicShieldConfiguration/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StoicShieldConfiguration;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonigolfor.Stoic.StoicShieldConfiguration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5390DD5F3010F36100231D66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StoicShieldAction/StoicShieldAction.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6Q59R4QBXF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StoicShieldAction/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StoicShieldAction;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonigolfor.Stoic.StoicShieldAction;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5390DD603010F36100231D66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StoicShieldAction/StoicShieldAction.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6Q59R4QBXF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StoicShieldAction/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StoicShieldAction;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yonigolfor.Stoic.StoicShieldAction;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		CE8400112FF3C96B00D803A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -247,6 +724,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Stoic/Stoic.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6Q59R4QBXF;
@@ -255,6 +733,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Stoic/Stoic-InfoAdditions.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Stoic uses your front camera for a brief self-reflection moment before you open a distracting app.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -291,6 +771,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Stoic/Stoic.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6Q59R4QBXF;
@@ -299,6 +780,8 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Stoic/Stoic-InfoAdditions.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Stoic uses your front camera for a brief self-reflection moment before you open a distracting app.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -333,6 +816,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5390DD393010F31800231D66 /* Build configuration list for PBXNativeTarget "StoicActivityMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5390DD363010F31800231D66 /* Debug */,
+				5390DD373010F31800231D66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5390DD4C3010F34B00231D66 /* Build configuration list for PBXNativeTarget "StoicShieldConfiguration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5390DD4D3010F34B00231D66 /* Debug */,
+				5390DD4E3010F34B00231D66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5390DD5E3010F36100231D66 /* Build configuration list for PBXNativeTarget "StoicShieldAction" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5390DD5F3010F36100231D66 /* Debug */,
+				5390DD603010F36100231D66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CE8400032FF3C96800D803A7 /* Build configuration list for PBXProject "Stoic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

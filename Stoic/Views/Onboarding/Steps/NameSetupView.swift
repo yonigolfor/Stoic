@@ -48,5 +48,10 @@ struct NameSetupView: View {
         }
         .padding(.horizontal, 24)
         .onAppear { isFocused = true }
+        .onChange(of: viewModel.currentStep) { _, newStep in
+            // TabView(.page) keeps neighboring pages mounted, so this field never
+            // naturally resigns focus when the user swipes/advances away from it.
+            isFocused = (newStep == 0)
+        }
     }
 }
